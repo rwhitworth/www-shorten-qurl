@@ -1,0 +1,20 @@
+WWW::Shorten::Qurl
+
+Perl interface to Qurl.com. Qurl.com is a URL-shortening site.
+
+For installation details, see INSTALL.
+
+For usage, see the documentation. Either use perldoc or view it
+on the web at:
+
+    http://search.cpan.org/dist/WWW-Shorten-Qurl/
+
+In order to use this module you will need to also use WWW::Shorten.
+See http://search.cpan.org/dist/WWW-Shorten/ for more details. 
+
+Written by Dave Cross <dave@mag-sol.com>.
+
+Copyright, (c) 2009 Magnum Solutions Ltd. All rights reserved.
+
+This library is free software; you are free to redistribute it and/or
+modify it under the same terms as Perl itself.

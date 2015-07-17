@@ -1,0 +1,12 @@
+WWW-Shorten-Qurl-*.tar.gz
+WWW-Shorten-Qurl*/
+Build
+Changes
+META.json
+META.yml
+MYMETA.json
+MYMETA.yml
+Makefile.PL
+_build/
+blib/
+cover_db/

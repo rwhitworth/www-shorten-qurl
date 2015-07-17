@@ -11,3 +11,4 @@ t/00noexp.t
 t/98pod-coverage.t
 t/99pod.t
 t/qurl.t
+META.json

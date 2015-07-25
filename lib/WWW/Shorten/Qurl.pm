@@ -44,17 +44,20 @@ it your long URL and will return the shorter Qurl version.
 
 =cut
 
-sub makeashorterlink ($)
+sub makeashorterlink
 {
-    my $url = shift or croak 'No URL passed to makeashorterlink';
+    my $url = shift or return undef;
+    my $email = shift or return undef;
+    # croak 'No URL passed to makeashorterlink';
     my $ua = __PACKAGE__->ua();
     my $qurl = 'http://qurl.com/automate.php';
     my $resp = $ua->post($qurl, [
 	url => $url,
+        email => $email,
 	]);
     return undef unless $resp->is_success;
     my $content = $resp->content;
-    return if $content eq $url;
+    return undef if $content eq $url;
     return $content;
 }
 
@@ -68,10 +71,10 @@ If anything goes wrong, then either function will return C<undef>.
 
 =cut
 
-sub makealongerlink ($)
+sub makealongerlink
 {
-    my $qurl = shift 
-	or croak 'No Qurl key / URL passed to makealongerlink';
+    my $qurl = shift or return undef;
+    # croak 'No Qurl key / URL passed to makealongerlink';
     my $ua = __PACKAGE__->ua();
 
     $qurl = "http://qurl.com/$qurl"
@@ -83,7 +86,7 @@ sub makealongerlink ($)
 
     my $resp = $ua->get($qurl);
 
-    return unless $resp->is_redirect;
+    return undef unless $resp->is_redirect;
     my $url = $resp->header('Location');
     return $url;
 }
